@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Member {
 	@Id
@@ -19,7 +20,7 @@ public class Member {
 	private String password;
 	
 	@OneToMany(cascade = {CascadeType.ALL})
-	@JoinColumn(name="owned_game_id")
+	@JoinColumn
 	private List<Game> ownedgames;
 	
 	public Member() {

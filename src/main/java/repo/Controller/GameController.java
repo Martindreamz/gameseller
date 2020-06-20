@@ -2,8 +2,8 @@ package repo.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/")
+@RequestMapping
 public class GameController {
 
-	
+//	public String
 }
