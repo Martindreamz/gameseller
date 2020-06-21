@@ -1,5 +1,6 @@
 package repo.Model;
 
+import java.util.Comparator;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,7 +13,7 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Member {
+public class Member implements Comparable<Member>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int memberid;
@@ -54,6 +55,12 @@ public class Member {
 	}
 	public void setOwnedgames(List<Game> ownedgames) {
 		this.ownedgames = ownedgames;
+	}
+	@Override
+	public int compareTo(Member o) {
+		// TODO Auto-generated method stub
+		if(this.name==o.name) {
+		return 0};
 	}
 	
 	
