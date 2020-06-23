@@ -16,32 +16,32 @@ import repo.Repository.MemberRepository;
 
 @SpringBootApplication
 public class GamesellerApplication {
-//
-//	@Autowired
-//	GameRepository grepo;
-//
-//	@Autowired
-//	MemberRepository mrepo;
+
+	@Autowired
+	GameRepository grepo;
+
+	@Autowired
+	MemberRepository mrepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(GamesellerApplication.class, args);
 	}
 
-//	@Bean
-//	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-//		return args -> {
-////			Member Martin = new Member("Martin","@qwert123");
-////			mrepo.save(Martin);
-////			Member Martini = new Member("Martini","@qwert123");
-////			mrepo.save(Martini);
-//			
-//			Game overcookeda = new Game("Overcooked",mrepo.findByname("Martin").get(0),LocalDateTime.now());
-//			grepo.save(overcookeda);
-//			Game overcookedb = new Game("Overcooked2",mrepo.findByname("Martin").get(0),LocalDateTime.now());
-//			grepo.save(overcookedb);
-//			Game overcookedc = new Game("Overcooked2",mrepo.findByname("Martini").get(0),LocalDateTime.now());
-//			grepo.save(overcookedc);
-//		};
+	@Bean
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+		return args -> {
+//			Member Martin = new Member("Martin","@qwert123");
+//			mrepo.save(Martin);
+			Member Martini = new Member("Martini","@qwert123");
+			mrepo.save(Martini);
+			
+			Game overcookeda = new Game("Overcooked",mrepo.findByname("Martin").get(0),LocalDateTime.now());
+			grepo.save(overcookeda);
+			Game overcookedb = new Game("Overcooked2",mrepo.findByname("Martin").get(0),LocalDateTime.now());
+			grepo.save(overcookedb);
+			Game overcookedc = new Game("Overcooked2",mrepo.findByname("Martini").get(0),LocalDateTime.now());
+			grepo.save(overcookedc);
+		};
 
-//	}
+	}
 }

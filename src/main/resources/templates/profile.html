@@ -5,6 +5,12 @@
 <title>Profile</title>
 </head>
 <body>
-<h1>wassup</h1>
+<h1  th:text="Wassup +' '+ ${member.name}">Name</h1>
+<h1>Here are your games</h1>
+<table>
+<tr th:each="Game:${member.ownedgames}">
+<td th:text = "*{name}"></td> 
+</tr>
+</table>
 </body>
 </html>

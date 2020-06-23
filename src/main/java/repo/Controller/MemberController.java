@@ -2,12 +2,12 @@ package repo.Controller;
 
 import java.util.List;
 
-import javax.persistence.metamodel.Metamodel;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,22 +20,28 @@ public class MemberController {
 	@Autowired
 	MemberRepository mrepo;
 
+	@InitBinder
+	protected void InitBinder(WebDataBinder binder) {
+
+	}
+
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
 
 	@GetMapping("/profile")
-	public String profile(@ModelAttribute("member") Member member, Model model) {
+	public String profile(@ModelAttribute("member") Member member,Model model) {
 		List<Member> allmembers = mrepo.findAll();
+		System.out.println(member);
 		for (Member m: allmembers) {
-			if(m.getName()==member.getName()) {
+			System.out.println(m);
+			if(m.getName().equals(member.getName())) {
+				model.addAttribute("errormsg", "The name is taken");
 				return "signup";
 			}
 		}
-
 		mrepo.save(member);
-
 		return "profile";
 	}
 

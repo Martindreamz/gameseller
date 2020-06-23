@@ -1,6 +1,5 @@
 package repo.Model;
 
-import java.util.Comparator;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -56,13 +55,21 @@ public class Member implements Comparable<Member>{
 	public void setOwnedgames(List<Game> ownedgames) {
 		this.ownedgames = ownedgames;
 	}
+	
+	@Override
+	public String toString() {
+		return "Member [memberid=" + memberid + ", name=" + name + ", password=" + password + ", ownedgames="
+				+ ownedgames + "]";
+	}
 	@Override
 	public int compareTo(Member o) {
 		// TODO Auto-generated method stub
-		if(this.name==o.name) {
-		return 0};
+		if(this.getName()==o.getName()) {
+		return 0;}
+	return 1;
+		}
 	}
 	
 	
 	
-}
+
