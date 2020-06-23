@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gallery</title>
+</head>
+<body>
+	<table class="w3-container" >
+		<tr th:each="Game:${gallery}">
+			<td th:text="${Game.name}"></td>
+		</tr>
+	</table>		
+	
+</body>
+</html>

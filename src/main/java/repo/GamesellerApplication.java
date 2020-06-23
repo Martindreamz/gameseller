@@ -32,15 +32,15 @@ public class GamesellerApplication {
 		return args -> {
 //			Member Martin = new Member("Martin","@qwert123");
 //			mrepo.save(Martin);
-			Member Martini = new Member("Martini","@qwert123");
-			mrepo.save(Martini);
-			
-			Game overcookeda = new Game("Overcooked",mrepo.findByname("Martin").get(0),LocalDateTime.now());
-			grepo.save(overcookeda);
-			Game overcookedb = new Game("Overcooked2",mrepo.findByname("Martin").get(0),LocalDateTime.now());
-			grepo.save(overcookedb);
-			Game overcookedc = new Game("Overcooked2",mrepo.findByname("Martini").get(0),LocalDateTime.now());
-			grepo.save(overcookedc);
+//			Member Martini = new Member("Martini","@qwert123");
+//			mrepo.save(Martini);
+//			
+//			Game overcookeda = new Game("Overcooked");
+//			grepo.save(overcookeda);
+//			Game overcookedb = new Game("Overcooked2");
+//			grepo.save(overcookedb);
+//			Game overcookedc = new Game("Overcooked3");
+//			grepo.save(overcookedc);
 		};
 
 	}

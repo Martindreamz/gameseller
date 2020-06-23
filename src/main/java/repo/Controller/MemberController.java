@@ -1,5 +1,6 @@
 package repo.Controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import repo.Model.Game;
 import repo.Model.Member;
 import repo.Repository.MemberRepository;
 
@@ -51,7 +53,9 @@ public class MemberController {
 	}
 
 	@GetMapping("/cart")
-	public String cart() {
+	public String cart(@ModelAttribute("cart") List<Game> cart, Model model) {
+
+		
 		return "cart";
 	}
 

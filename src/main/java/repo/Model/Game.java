@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Game {
@@ -16,17 +15,13 @@ public class Game {
 	private int gameid;
 	private String name;
 	
-	@ManyToOne
-	private Member member;
-	private LocalDateTime purchaseddate;
-	public Game() {
+		public Game() {
 		super();
 	}
-	public Game(String name, Member member, LocalDateTime purchaseddate) {
+	public Game(String name) {
 		super();
 		this.name = name;
-		this.member = member;
-		this.purchaseddate = purchaseddate;
+		
 	}
 	public int getGameid() {
 		return gameid;
@@ -40,20 +35,9 @@ public class Game {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Member getMember() {
-		return member;
-	}
-	public void setMember(Member member) {
-		this.member = member;
-	}
-	public LocalDateTime getPurchaseddate() {
-		return purchaseddate;
-	}
-	public void setPurchaseddate(LocalDateTime purchaseddate) {
-		this.purchaseddate = purchaseddate;
-	}
+	
 	@Override
 	public String toString() {
-		return "Games [name=" + name + ", member=" + member + ", purchaseddate=" + purchaseddate + "]";
+		return "Games [name=" + name + "]";
 	}
 }

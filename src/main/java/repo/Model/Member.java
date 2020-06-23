@@ -20,7 +20,6 @@ public class Member implements Comparable<Member>{
 	private String password;
 	
 	@OneToMany(cascade = {CascadeType.ALL})
-	@JoinColumn
 	private List<Game> ownedgames;
 	
 	public Member() {
